@@ -23,19 +23,35 @@ public class Patterns {
         System.out.println();
         patternEleven(n);
         System.out.println();
-        patternTwentySix(n);
+        // patternThirteen(n);
+        // System.out.println();
+        patternFourteen(n);
         System.out.println();
-        patternThirtyOne(n);
-        System.out.println();
-        patternThirtyTwo(n);
-        System.out.println();
-        patternThirtyThree(n);
-        System.out.println();
-        patternThirtyFour(n);
-        System.out.println();
-        patternThirtyFive(n);
-        System.out.println();
-        patternThirtySix(n);
+        // patternSixteen(n);
+        // System.out.println();
+        // patternTwenty(n);
+        // System.out.println();
+        // patternTwentyOne(n);
+        // System.out.println();
+        // patternTwentyTwo(n);
+        // System.out.println();
+        // patternTwentySix(n);
+        // System.out.println();
+        // patternThirty(n);
+        // System.out.println();
+        // patternThirtyOne(n);
+        // System.out.println();
+        // patternThirtyTwo(n);
+        // System.out.println();
+        // patternThirtyThree(n);
+        // System.out.println();
+        // patternThirtyFour(n);
+        // System.out.println();
+        // patternThirtyFive(n);
+        // System.out.println();
+        // patternThirtySix(n);
+        // System.out.println();
+        // patternThirtySeven(n);
     }
 
     static void patternOne(int n) {
@@ -160,10 +176,116 @@ public class Patterns {
         }
     }
 
+    static void patternThirteen(int n) {
+        int k = 1;
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n - i; j++) {
+                System.out.print("   ");
+            }
+            for (int j = 1; j <= k; j++) {
+                if (j == 1 || i == n || j == k) {
+                    System.out.print(" * ");
+                } else {
+                    System.out.print("   ");
+                }
+            }
+            k += 2;
+            System.out.println();
+        }
+    }
+
+    // Not Done
+    static void patternFourteen(int n) {
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i - 1; j++) {
+                System.out.print("   ");
+            }
+            for (int j = 1; j <= (n - i) * 2 + 1; j++) {
+                if (i == 1 || j == 1) {
+                    System.out.print(" * ");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+
+    }
+
+    static int factorial(int n) {
+        if (n < 2) {
+            return 1;
+        }
+        return n * factorial(n - 1);
+    }
+
+    static void patternSixteen(int n) {
+        for (int i = 0; i <= n; i++) {
+            for (int j = 1; j < n - i; j++) {
+                System.out.print("  ");
+            }
+            for (int j = 0; j <= i; j++) {
+                System.out.print(factorial(i) / (factorial(i - j) * factorial(j)) + "   ");
+            }
+            System.out.println();
+        }
+    }
+
+    static void patternTwenty(int n) {
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                if (i == 0 || i == n - 1 || j == n - 1 || j == 0) {
+                    System.out.print(" * ");
+                } else {
+                    System.out.print("   ");
+                }
+            }
+            System.out.println();
+        }
+    }
+
+    static void patternTwentyOne(int n) {
+        int count = 1;
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print(count++ + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    static void patternTwentyTwo(int n) {
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
+                if ((i + j) % 2 == 0) {
+                    System.out.print(1 + " ");
+                } else {
+                    System.out.print(0 + " ");
+                }
+            }
+            System.out.println();
+        }
+    }
+
     static void patternTwentySix(int n) {
         for (int i = 1; i <= n; i++) {
             for (int j = n; j >= i; j--) {
                 System.out.print(i + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    static void patternThirty(int n) {
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n - i; j++) {
+                System.out.print("  ");
+            }
+            for (int j = i; j >= 1; j--) {
+                System.out.print(j + " ");
+            }
+            for (int j = 2; j <= i; j++) {
+                System.out.print(j + " ");
             }
             System.out.println();
         }
@@ -237,6 +359,18 @@ public class Patterns {
         for (int i = 1; i <= n; i++) {
             for (int j = n; j >= i; j--) {
                 System.out.print((char) (63 + i + j) + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    static void patternThirtSeven(int n) {
+        for (int i = 1; i <= n; i++) {
+            for (int j = n; j > i; j--) {
+                System.out.print(j + " ");
+            }
+            for (int j = 1; j <= i; j++) {
+                System.out.print(j + " ");
             }
             System.out.println();
         }
