@@ -25,7 +25,9 @@ public class Patterns {
         System.out.println();
         // patternThirteen(n);
         // System.out.println();
-        patternFourteen(n);
+        // patternFourteen(n);
+        // System.out.println();
+        patternFifteen(n);
         System.out.println();
         // patternSixteen(n);
         // System.out.println();
@@ -209,7 +211,28 @@ public class Patterns {
             }
             System.out.println();
         }
+    }
 
+    static void patternFifteen(int n) {
+        int k = 1;
+        int l = 2 * n - 1;
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n - i; j++) {
+                System.out.print("  ");
+            }
+            for (int j = 1; j <= k; j++) {
+                System.out.print("* ");
+            }
+            for (int j = 1; j <= l; j++) {
+                System.out.print("* ");
+            }
+            for (int j = 1; j <= i; j++) {
+                System.out.print(" ");
+            }
+            k += 2;
+            l -= 2;
+            System.out.println();
+        }
     }
 
     static int factorial(int n) {
